@@ -7,8 +7,9 @@ const MainContent = () => {
   return (
     <MainContentWrapper>
       <div>
-        <h1>Dashboard</h1>
+        <h1 className="text-2xl text-black font-semibold">Dashboard</h1>
       </div>
+      s
     </MainContentWrapper>
   );
 };
