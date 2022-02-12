@@ -2,8 +2,8 @@ import React from "react";
 import UserIcon from "../assets/icons/user.svg";
 const DataCard = ({ title, icon, data }) => {
   return (
-    <div className="shadow-md flex">
-      <div className="w-12 h-12 p-2">
+    <div className="shadow-md flex max-w-md">
+      <div className="w-12 h-12 p-2 bg-blue-200 rounded-full flex justify-center items-center">
         <img src={UserIcon} alt="users" />
       </div>
 
