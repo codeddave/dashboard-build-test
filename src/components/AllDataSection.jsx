@@ -20,20 +20,20 @@ const AllDataSection = () => {
         <table class="text-left text-gray-600 text-xs">
           <thead>
             <tr className="bg-light ">
-              <th scope="col" className="pr-4">
+              <th scope="col" className="pr-10">
                 A
               </th>
 
-              <th scope="col" className="pr-4 text-white">
+              <th scope="col" className="pr-10 text-white">
                 ffb
               </th>
-              <th scope="col" className="pr-4">
+              <th scope="col" className="pr-10">
                 TITLE
               </th>
-              <th scope="col" className="pr-4">
+              <th scope="col" className="pr-10">
                 FIRST NAME
               </th>
-              <th scope="col" className="pr-4">
+              <th scope="col" className="pr-10">
                 LAST NAME
               </th>
               <th scope="col">ID</th>
