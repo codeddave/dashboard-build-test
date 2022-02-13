@@ -1,9 +1,8 @@
-import Home from "./components/Home";
-import logo from "./logo.svg";
-
+import Home from "./pages/Home";
+import "./App.css";
 function App() {
   return (
-    <div className="App bg-red-600 text-blue-500">
+    <div className="App  ">
       <Home />
     </div>
   );
