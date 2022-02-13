@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import AllDataSection from "./AllDataSection";
 import DataCard from "./DataCard";
 import DataCardContainer from "./DataCardContainer";
 const MainContentWrapper = styled.section`
@@ -7,12 +8,14 @@ const MainContentWrapper = styled.section`
 `;
 const MainContent = () => {
   return (
-    <MainContentWrapper className="h-screen border w-full">
-      <div className="py-6 mb-9 border">
+    <MainContentWrapper className="h-screen w-full">
+      <div className="py-6 mb-9 shadow">
         <h1 className="text-2xl text-black font-semibold pl-10">Dashboard</h1>
       </div>
 
       <DataCardContainer />
+
+      <AllDataSection />
     </MainContentWrapper>
   );
 };
