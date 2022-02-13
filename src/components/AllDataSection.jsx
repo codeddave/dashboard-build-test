@@ -1,4 +1,5 @@
 import React from "react";
+import AllUsers from "./AllUsers";
 import { Tab } from "./common/Tab";
 import { useTabs } from "./hooks/useTab";
 
@@ -16,40 +17,8 @@ const AllDataSection = () => {
         </Tab>
       </div>
 
-      <section className="mt-4 border ">
-        <table class="text-left text-gray-600 text-xs">
-          <thead>
-            <tr className="bg-light ">
-              <th scope="col" className="pr-10">
-                A
-              </th>
-
-              <th scope="col" className="pr-10 text-white">
-                ffb
-              </th>
-              <th scope="col" className="pr-10">
-                TITLE
-              </th>
-              <th scope="col" className="pr-10">
-                FIRST NAME
-              </th>
-              <th scope="col" className="pr-10">
-                LAST NAME
-              </th>
-              <th scope="col">ID</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="position-reltive">
-              <td>im</td>
-              <td>im</td>
-              <td>Mr</td>
-              <td>Kehinde</td>
-              <td>Adebisi</td>
-              <td>60d21b4667d0d8992e610c85</td>
-            </tr>
-          </tbody>
-        </table>
+      <section className="mt-4 b p-2 rounded  bg-gray-200 w-3/5">
+        {tab === "users" ? <AllUsers /> : <p>evoejvbojb</p>}
       </section>
     </div>
   );
