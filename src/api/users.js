@@ -16,7 +16,7 @@ export const getUserbyId = async (id) => {
       "app-id": process.env.REACT_APP_API_KEY,
     },
   };
-  const res = await axios.get(`https://dummyapi.io/data/v1/user${id}`, config);
+  const res = await axios.get(`https://dummyapi.io/data/v1/user/${id}`, config);
   return res.data;
 };
 
