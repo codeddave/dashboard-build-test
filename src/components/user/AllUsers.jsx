@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import PersonOne from "../../assets/icons/person-one.svg";
+import { getUsers } from "./userSlice";
 
 const AllUsers = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, [dispatch]);
   return (
     <table
       class="text-left text-gray-500 text-xs  py-8 "

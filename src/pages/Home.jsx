@@ -1,10 +1,10 @@
 import React from "react";
-import MainContent from "./MainContent.jsx";
-import SideNav from "./SideNav.jsx";
+import MainContent from "../components/MainContent.jsx";
+import SideNav from "../components/SideNav.jsx";
 
 const Home = () => {
   return (
-    <div>
+    <div className="flex w-full">
       <SideNav />
       <MainContent />
     </div>

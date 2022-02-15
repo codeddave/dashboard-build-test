@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { userApi } from "../../api/users";
 
-const getUsers = createAsyncThunk(
-  "users/fetchByIdStatus",
+export const getUsers = createAsyncThunk(
+  "users/getUsers",
   async (userId, thunkAPI) => {
     const response = await userApi.getUsers();
     return response;
@@ -16,7 +16,7 @@ const userSlice = createSlice({
     error: null,
   },
   reducers: {
-    getUsers: (state, action) => {},
+    // getUsers: (state, action) => {},
   },
   extraReducers: (builder) => {
     builder
