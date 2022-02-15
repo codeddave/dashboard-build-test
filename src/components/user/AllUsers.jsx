@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { selectUsers } from "./userSelectors";
 import { getUsers } from "./userSlice";
 
-const AllUsers = () => {
+const AllUsers = ({ setId }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -12,6 +12,10 @@ const AllUsers = () => {
   }, [dispatch]);
 
   const users = useSelector(selectUsers);
+
+  /*  useEffect(()=> {
+      setId(users.data[0].id)
+  }, []) */
   if (!users.data) return <p>aw.lvj bwv</p>;
   return (
     <section className="h-96 overflow-y-scroll">
@@ -45,6 +49,7 @@ const AllUsers = () => {
             <tr
               className=" shadow  px-4 w-full rounded"
               style={{ marginBottom: "40px" }}
+              onClick={() => setId(user.id)}
             >
               <td className="mb-8 py-2 ">
                 {" "}
