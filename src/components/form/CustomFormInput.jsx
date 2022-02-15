@@ -6,7 +6,7 @@ const CustomFormInput = ({
   title,
 }) => {
   return (
-    <section className="mb-3">
+    <section className="mb-3.5">
       <>
         <label htmlFor={field.name} className="text-sm ">
           {title}
@@ -15,7 +15,7 @@ const CustomFormInput = ({
           type={type}
           placeholder={placeholder}
           {...field}
-          className="py-2 mt-3 w-full bg-blue-100 rounded pl-2 outline-none text-gray-700"
+          className="py-2 mt-1.5 w-full border bg-blue-50 rounded pl-2 outline-none text-gray-700"
         />
         {errors[field.name] && touched[field.name] ? (
           <span className="text-red-700">{errors[field.name]}</span>
