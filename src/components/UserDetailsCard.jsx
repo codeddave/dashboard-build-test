@@ -49,7 +49,7 @@ const UserDetailsCard = ({ user }) => {
               <p>dvdv</p>
             </div>
           </div>
-          <hr />
+          <hr className="mt-4" />
           <div className="grid grid-cols-2 pt-4">
             <div>
               <p className="extra-small-font">STREET </p>
