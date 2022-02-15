@@ -1,3 +1,10 @@
 .app-dark {
   background-color: #051a2e;
 }
+
+.extra-small-font {
+  font-size: 6.93px;
+}
+.small-font {
+  font-size: 9.7px;
+}
