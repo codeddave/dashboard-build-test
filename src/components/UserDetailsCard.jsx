@@ -37,7 +37,7 @@ const UserDetailsCard = ({ user }) => {
             </div>
           </div>
           <hr />
-          <div className="flex justify-between w-3/4 pt-4">
+          <div className="grid grid-cols-2 pt-4">
             <div>
               <p className="extra-small-font">GENDER </p>
 
@@ -46,6 +46,19 @@ const UserDetailsCard = ({ user }) => {
 
             <div>
               <p className="extra-small-font">DATE OF BIRTH</p>
+              <p>dvdv</p>
+            </div>
+          </div>
+          <hr />
+          <div className="grid grid-cols-2 pt-4">
+            <div>
+              <p className="extra-small-font">STREET </p>
+
+              <p>{user.gender}</p>
+            </div>
+
+            <div>
+              <p className="extra-small-font">CITY</p>
               <p>dvdv</p>
             </div>
           </div>
