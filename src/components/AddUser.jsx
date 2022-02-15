@@ -1,4 +1,4 @@
-import { Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
 import React from "react";
 
 const AddUser = () => {
@@ -10,13 +10,17 @@ const AddUser = () => {
         left: "50%",
         transform: "translate(-50%, -50%)",
       }}
-      className="modal-bg-color border bg-blue-200 shadow-xl p-6 transform transition-all w-full md:max-w-2xl opacity-100 overflow-x-hidden overflw-y-scroll fixed z-50 tracking-wider  scroll "
+      className="modal-bg-color bg-white border bg-blue shadow-xl p-6 transform transition-all w-full md:max-w-2xl opacity-100  overflow-x-hidden overflw-y-scroll fixed z-50 tracking-wider  scroll "
     >
-      <Formik>{() => <Form></Form>}</Formik>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolore
-      ullam vitae sapiente odit nesciunt, perspiciatis cupiditate, officia magni
-      nihil distinctio consectetur dignissimos, corporis laborum? Placeat facere
-      rem laudantium amet?
+      <p className="text-4xl font-bold">ADD USER</p>
+      <p className="text-2xl font-bold pt-2.5">1/2 Personal Details</p>
+      <Formik>
+        {() => (
+          <Form>
+            <Field />
+          </Form>
+        )}
+      </Formik>
     </section>
   );
 };
