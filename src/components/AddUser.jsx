@@ -6,7 +6,7 @@ const AddUser = () => {
   return (
     <section
       style={{
-        height: "65vh",
+        height: "90vh",
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
