@@ -7,6 +7,10 @@ import { getUserById } from "./user/userSlice";
 import { useSelector } from "react-redux";
 import { selectUser } from "./user/userSelectors";
 import UserDetailsCard from "./UserDetailsCard";
+import AllPosts from "./posts/AllPosts";
+import { getPostById } from "./posts/postSlice";
+import { selectPost } from "./posts/postSelectors";
+import PostDetailsCard from "./posts/PostDetailsCard";
 const AllDataSection = () => {
   const { onTabClick, tab } = useTabs("users");
   const dispatch = useDispatch();
@@ -14,9 +18,14 @@ const AllDataSection = () => {
   const [id, setId] = useState();
 
   useEffect(() => {
-    dispatch(getUserById(id));
-  }, [id, dispatch]);
+    if (tab === "users") {
+      dispatch(getUserById(id));
+    } else {
+      dispatch(getPostById(id));
+    }
+  }, [id, dispatch, tab]);
   const user = useSelector(selectUser);
+  const post = useSelector(selectPost);
 
   return (
     <div className="pt-16 pl-12 flex justify-around">
@@ -31,11 +40,18 @@ const AllDataSection = () => {
         </div>
 
         <section className="mt-4 b p-2 rounded  bg-gray-200 ">
-          {tab === "users" ? <AllUsers setId={setId} /> : <p>evoejvbojb</p>}
+          {tab === "users" ? (
+            <AllUsers setId={setId} />
+          ) : (
+            <AllPosts setId={setId} />
+          )}
         </section>
       </section>
-
-      <UserDetailsCard user={user} />
+      {tab === "user" ? (
+        <UserDetailsCard user={user} />
+      ) : (
+        <PostDetailsCard post={post} />
+      )}
     </div>
   );
 };
