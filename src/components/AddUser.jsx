@@ -13,7 +13,7 @@ const AddUser = () => {
       }}
       className="modal-bg-color text-gray-600 bg-white border bg-blue shadow-xl p-6 transform transition-all w-full md:max-w-2xl opacity-100  overflow-x-hidden overflw-y-scroll fixed z-50 tracking-wider  scroll "
     >
-      <section className="shadow h-full p-6">
+      <section className="shadow h-auto p-6">
         <p className="text-4xl font-bold">ADD USER</p>
         <p className="text-2xl font-bold pt-2.5 pb-5">1/2 Personal Details</p>
         <Formik>
@@ -29,7 +29,31 @@ const AddUser = () => {
                 component={CustomFormInput}
                 placeholder="First Name"
                 name="firstName"
-                title="First name"
+                title="First Name"
+              />
+              <Field
+                component={CustomFormInput}
+                placeholder="Last Name"
+                name="lastName"
+                title="Last Name"
+              />{" "}
+              <Field
+                component={CustomFormInput}
+                placeholder="Gender"
+                name="gender"
+                title="Gender"
+              />{" "}
+              <Field
+                component={CustomFormInput}
+                placeholder="Email Address"
+                name="email"
+                title="Email Address"
+              />{" "}
+              <Field
+                component={CustomFormInput}
+                placeholder="Date of Birth"
+                name="dateOfBirth"
+                title="Date of Birth"
               />
             </Form>
           )}
