@@ -65,7 +65,7 @@ const AllPosts = ({ setId }) => {
                 />
               </td>
               <td>
-                {user.owner.firstName} {user.owner.lastName}
+                {user?.owner?.firstName} {user?.owner?.lastName}
               </td>
               <td>{user.text}</td>
 
