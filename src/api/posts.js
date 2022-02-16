@@ -10,6 +10,17 @@ export const getPosts = async () => {
   return res.data;
 };
 
+export const getPostbyId = async (id) => {
+  const config = {
+    headers: {
+      "app-id": process.env.REACT_APP_API_KEY,
+    },
+  };
+  const res = await axios.get(`https://dummyapi.io/data/v1/post/${id}`, config);
+  return res.data;
+};
+
 export const postApi = {
   getPosts,
+  getPostbyId,
 };

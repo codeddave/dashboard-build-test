@@ -7,7 +7,13 @@ export const getPosts = createAsyncThunk(
     return response;
   }
 );
-
+export const getPostById = createAsyncThunk(
+  "users/getUserById",
+  async (userId, thunkAPI) => {
+    const response = await postApi.getPostbyId(userId);
+    return response;
+  }
+);
 const postSlice = createSlice({
   name: "post",
   initialState: {
@@ -28,11 +34,11 @@ const postSlice = createSlice({
       .addCase(getPosts.rejected, (state, action) => {
         state.isLoading = "rejected";
         state.error = action.error;
-      });
-    /*  .addCase(getPostById.fulfilled, (state, action) => {
+      })
+      .addCase(getPostById.fulfilled, (state, action) => {
         state.isLoading = "resolved";
-        state.user = action.payload;
-      }); */
+        state.post = action.payload;
+      });
   },
 });
 
