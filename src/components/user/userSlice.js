@@ -19,7 +19,7 @@ const userSlice = createSlice({
   name: "user",
   initialState: {
     users: [],
-    isLoading: "",
+    isLoading: "idle",
     error: null,
     user: {},
   },
