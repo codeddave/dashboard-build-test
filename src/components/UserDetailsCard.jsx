@@ -2,8 +2,9 @@ import dayjs from "dayjs";
 import React from "react";
 
 const UserDetailsCard = ({ user }) => {
+  console.log(user);
   return (
-    <section className="border-2 rounded h-96 w-1/4 mr p-4 text-xs">
+    <section className="border-2 rounded h-auto w-1/4 mr p-4 text-xs">
       {user.picture ? (
         <div>
           <div className="grid grid-cols-2 gap-x-3">
@@ -51,16 +52,51 @@ const UserDetailsCard = ({ user }) => {
             </div>
           </div>
           <hr className="mt-4" />
-          <div className="grid grid-cols-2 pt-4">
+          <div className="grid grid-cols-2 pt-4 pr-2 gap-x-1">
             <div>
               <p className="extra-small-font">STREET </p>
 
-              <p>{user.gender}</p>
+              <p>{user?.location?.street}</p>
             </div>
 
             <div>
               <p className="extra-small-font">CITY</p>
-              <p>dvdv</p>
+              <p>{user?.location?.city}</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 pt-4 pr-2 gap-x-1">
+            <div>
+              <p className="extra-small-font">YEAR ENROLLED </p>
+
+              <p>{dayjs(user?.registerDate).format("YYYY")}</p>
+            </div>
+
+            <div></div>
+          </div>
+          <hr className="mt-4" />
+
+          <div className="grid grid-cols-2 pt-4 pr-2 gap-x-1">
+            <div>
+              <p className="extra-small-font">REGISTERED </p>
+
+              <p>{dayjs(user.registerDate).format("DD-MMM-YYYY")}</p>
+            </div>
+
+            <div>
+              <p className="extra-small-font">LAST UPDATED</p>
+              <p>{dayjs(user.updatedDate).format("DD-MMM-YYYY")}</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 pt-4">
+            <div>
+              <p className="extra-small-font">POSTS </p>
+
+              <p>23</p>
+            </div>
+
+            <div>
+              <p className="extra-small-font">COMMENTS</p>
+              <p>45</p>
             </div>
           </div>
         </div>
