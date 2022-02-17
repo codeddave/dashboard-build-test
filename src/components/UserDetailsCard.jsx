@@ -65,7 +65,7 @@ const UserDetailsCard = ({ user }) => {
           </div>
         </div>
       ) : (
-        <p>Select a User</p>
+        <p className="text-center pt-20">Please Select a User from list </p>
       )}
     </section>
   );
