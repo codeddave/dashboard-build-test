@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import React from "react";
 
 const UserDetailsCard = ({ user }) => {
@@ -46,7 +47,7 @@ const UserDetailsCard = ({ user }) => {
 
             <div>
               <p className="extra-small-font">DATE OF BIRTH</p>
-              <p>dvdv</p>
+              <p>{dayjs(user.dateofBirth).format("DD-MMM-YYYY")}</p>
             </div>
           </div>
           <hr className="mt-4" />
