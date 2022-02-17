@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
+import { TailSpin } from "react-loader-spinner";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { selectPosts } from "./postSelectors";
+import { selectPosts, selectPostsLoading } from "./postSelectors";
 import { getPosts } from "./postSlice";
 
 const AllPosts = ({ setId }) => {
@@ -12,12 +13,18 @@ const AllPosts = ({ setId }) => {
   }, [dispatch]);
 
   const posts = useSelector(selectPosts);
+  const isLoading = useSelector(selectPostsLoading);
 
   /*  useEffect(()=> {
       setId(users.data[0].id)
   }, []) */
   console.log(posts);
-  if (!posts?.data) return <p>aw.lvj bwv</p>;
+  if (!posts.data || isLoading === "pending")
+    return (
+      <div className="h-96 flex justify-center items-center">
+        <TailSpin color="#5e97d4" />
+      </div>
+    );
 
   return (
     <section className="h-96 overflow-y-scroll">
