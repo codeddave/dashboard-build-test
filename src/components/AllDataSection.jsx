@@ -47,7 +47,7 @@ const AllDataSection = () => {
           )}
         </section>
       </section>
-      {tab === "user" ? (
+      {tab === "users" ? (
         <UserDetailsCard user={user} />
       ) : (
         <PostDetailsCard post={post} />
