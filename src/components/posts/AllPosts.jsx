@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { selectPosts, selectPostsLoading } from "./postSelectors";
 import { getPosts } from "./postSlice";
 
-const AllPosts = ({ setId }) => {
+const AllPosts = ({ setId, data }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const AllPosts = ({ setId }) => {
       setId(users.data[0].id)
   }, []) */
   console.log(posts);
-  if (!posts.data || isLoading === "pending")
+  if (!data || isLoading === "pending")
     return (
       <div className="h-96 flex justify-center items-center">
         <TailSpin color="#5e97d4" />
@@ -54,11 +54,11 @@ const AllPosts = ({ setId }) => {
           </tr>
         </thead>
         <tbody className="bg-white mt-4 pl-8 w-full " style={{}}>
-          {posts.data.map((user) => (
+          {data.map((post) => (
             <tr
               className=" shadow  px-4 w-full rounded"
               style={{ marginBottom: "40px" }}
-              onClick={() => setId(user.id)}
+              onClick={() => setId(post.id)}
             >
               <td className="mb-8 py-2 ">
                 {" "}
@@ -66,18 +66,18 @@ const AllPosts = ({ setId }) => {
               </td>
               <td className="my-8 py-2">
                 <img
-                  src={user.image}
+                  src={post.image}
                   alt=""
                   className="-pl-2 rounded-full w-12 h-12"
                 />
               </td>
               <td>
-                {user?.owner?.firstName} {user?.owner?.lastName}
+                {post?.owner?.firstName} {post?.owner?.lastName}
               </td>
-              <td>{user.text}</td>
+              <td>{post.text}</td>
 
-              <td>{user.likes}</td>
-              <td>{user.publishDate}</td>
+              <td>{post.likes}</td>
+              <td>{post.publishDate}</td>
             </tr>
           ))}
         </tbody>

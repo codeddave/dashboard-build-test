@@ -5,20 +5,20 @@ import { useDispatch } from "react-redux";
 import { selectUsers, selectUsersLoading } from "./userSelectors";
 import { getUsers } from "./userSlice";
 
-const AllUsers = ({ setId }) => {
+const AllUsers = ({ setId, data }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUsers());
   }, [dispatch]);
 
-  const users = useSelector(selectUsers);
+  // const users = useSelector(selectUsers);
   const isLoading = useSelector(selectUsersLoading);
 
   /*  useEffect(()=> {
       setId(users.data[0].id)
   }, []) */
-  if (!users.data || isLoading === "pending")
+  if (!data || isLoading === "pending")
     return (
       <div className="h-96 flex justify-center items-center">
         <TailSpin color="#5e97d4" />
@@ -52,7 +52,7 @@ const AllUsers = ({ setId }) => {
           </tr>
         </thead>
         <tbody className="bg-white mt-4 pl-8 w-full " style={{}}>
-          {users.data.map((user) => (
+          {data.map((user) => (
             <tr
               className=" shadow  px-4 w-full rounded"
               style={{ marginBottom: "40px" }}
