@@ -6,3 +6,7 @@ const getPost = (state) => {
 
 export const selectPosts = createSelector(getPost, (post) => post.posts);
 export const selectPost = createSelector(getPost, (post) => post.post);
+export const selectPostsLoading = createSelector(
+  getPost,
+  (post) => post.isLoading
+);
