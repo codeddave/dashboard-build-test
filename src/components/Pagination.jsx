@@ -6,18 +6,20 @@ const Pagination = ({ dataPerPage, data, handlePageNumberCLick }) => {
   }
   console.log(pageNumbers);
   return (
-    <nav className="d-flex justify-content-center bg-black text-white">
+    <nav className="b text-white mb-10">
       <p>afbwfkbn wbkrkbk</p>
-      <ul className="pagination">
+      <ul className="pagination flex">
         {pageNumbers.map((number) => (
-          <li key={number} className="page-item">
-            <span
-              className="page-link"
-              onClick={() => handlePageNumberCLick(number)}
-            >
-              {number}
-            </span>
-          </li>
+          <div className=" border p-1 px-4">
+            <li key={number} className="cursor-pointer pl text-blue-500">
+              <span
+                className="page-link"
+                onClick={() => handlePageNumberCLick(number)}
+              >
+                {number}
+              </span>
+            </li>
+          </div>
         ))}
       </ul>
     </nav>
