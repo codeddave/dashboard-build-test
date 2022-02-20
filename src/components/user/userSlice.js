@@ -27,6 +27,7 @@ const userSlice = createSlice({
   initialState: {
     users: [],
     isLoading: "idle",
+    isUserLoading: "idle",
     error: null,
     user: {},
   },
@@ -48,14 +49,14 @@ const userSlice = createSlice({
         state.error = action.error;
       })
       .addCase(getUserById.fulfilled, (state, action) => {
-        state.isLoading = "resolved";
+        state.isUserLoading = "resolved";
         state.user = action.payload;
       })
       .addCase(getUserById.pending, (state, action) => {
-        state.isLoading = "pending";
+        state.isUserLoading = "pending";
       })
       .addCase(getUserById.rejected, (state, action) => {
-        state.isLoading = "rejected";
+        state.isUserLoading = "rejected";
         state.error = action.error;
       })
       .addCase(createUser.fulfilled, (state, action) => {
