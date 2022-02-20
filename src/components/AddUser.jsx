@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addUserSchema } from "./definitions/yup/addUserSchema";
 import CustomFormInput from "./form/CustomFormInput";
 import { createUser } from "./user/userSlice";
-const AddUser = () => {
+const AddUser = ({ closeModal }) => {
   const dispatch = useDispatch();
   return (
     <section
@@ -27,8 +27,8 @@ const AddUser = () => {
             lastName: "",
           }}
           onSubmit={(values) => {
-            console.log(values);
             dispatch(createUser(values));
+            closeModal();
           }}
         >
           {() => (
@@ -69,7 +69,10 @@ const AddUser = () => {
                 name="dateOfBirth"
                 title="Date of Birth"
               />
-              <button type="submit" className="border p-2">
+              <button
+                type="submit"
+                className="border p-2 w-full bg-blue-400 text-white rounded"
+              >
                 {" "}
                 submit{" "}
               </button>
