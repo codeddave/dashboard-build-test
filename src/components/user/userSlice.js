@@ -15,6 +15,13 @@ export const getUserById = createAsyncThunk(
     return response;
   }
 );
+export const createUser = createAsyncThunk(
+  "users/createUser",
+  async (userData, thunkAPI) => {
+    const response = await userApi.createUser(userData);
+    return response;
+  }
+);
 const userSlice = createSlice({
   name: "user",
   initialState: {
@@ -31,6 +38,7 @@ const userSlice = createSlice({
       .addCase(getUsers.fulfilled, (state, action) => {
         state.isLoading = "resolved";
         state.users = action.payload;
+        console.log(state.users);
       })
       .addCase(getUsers.pending, (state) => {
         state.isLoading = "pending";
@@ -42,6 +50,25 @@ const userSlice = createSlice({
       .addCase(getUserById.fulfilled, (state, action) => {
         state.isLoading = "resolved";
         state.user = action.payload;
+      })
+      .addCase(getUserById.pending, (state, action) => {
+        state.isLoading = "pending";
+      })
+      .addCase(getUserById.rejected, (state, action) => {
+        state.isLoading = "rejected";
+        state.error = action.error;
+      })
+      .addCase(createUser.fulfilled, (state, action) => {
+        state.isLoading = "resolved";
+
+        state.users.data.push(action.payload);
+      })
+      .addCase(createUser.pending, (state, action) => {
+        state.isLoading = "pending";
+      })
+      .addCase(createUser.rejected, (state, action) => {
+        state.isLoading = "rejected";
+        state.error = action.error;
       });
   },
 });
