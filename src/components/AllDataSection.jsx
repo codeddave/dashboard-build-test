@@ -20,7 +20,7 @@ const AllDataSection = () => {
   const { onTabClick, tab } = useTabs("users");
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataPerPage] = useState(10);
+  const [dataPerPage] = useState(5);
 
   const dispatch = useDispatch();
   useEffect(() => {

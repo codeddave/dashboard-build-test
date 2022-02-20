@@ -13,7 +13,7 @@ const Pagination = ({
   console.log(pageNumbers);
   if (!pageNumbers.length) return null;
   return (
-    <nav className="b text-white mb-10 px-4 border rounded w-1/4 shadow h-12 mt-2  flex flex-col justify-center ml-12">
+    <nav className="b text-white mb-10 px-4 border rounded fit-content py-2 shadow h-12 mt-2  flex flex-col justify-center ml-12">
       <div className="text-blue-400 flex items-center font-bold">
         <button onClick={handlePrevClick} className="pr-4">
           Prev
