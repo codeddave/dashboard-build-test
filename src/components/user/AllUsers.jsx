@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { selectUsers, selectUsersLoading } from "./userSelectors";
+import { selectUsersLoading } from "./userSelectors";
 import { getUsers } from "./userSlice";
 
 const AllUsers = ({ setId, data }) => {
@@ -51,6 +51,7 @@ const AllUsers = ({ setId, data }) => {
         <tbody className="bg-white mt-4 pl-8 w-full " style={{}}>
           {data.map((user) => (
             <tr
+              key={user.id}
               className=" shadow  px-4 w-full rounded"
               style={{ marginBottom: "40px" }}
               onClick={() => setId(user.id)}

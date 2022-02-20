@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import AllDataSection from "./AllDataSection";
-import DataCard from "./DataCard";
 import DataCardContainer from "./DataCardContainer";
 const MainContentWrapper = styled.section`
   //width: 100vh;
