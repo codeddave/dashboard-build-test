@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { selectPosts, selectPostsLoading } from "./postSelectors";
 import { getPosts } from "./postSlice";
+import LikeIcon from "../../assets/icons/thumb.svg";
 
 const AllPosts = ({ setId, data }) => {
   const dispatch = useDispatch();
@@ -16,9 +17,6 @@ const AllPosts = ({ setId, data }) => {
   const posts = useSelector(selectPosts);
   const isLoading = useSelector(selectPostsLoading);
 
-  /*  useEffect(()=> {
-      setId(users.data[0].id)
-  }, []) */
   console.log(posts);
   if (!data || isLoading === "pending")
     return (
@@ -39,16 +37,16 @@ const AllPosts = ({ setId, data }) => {
               <input type="checkbox" className="ml-3 " />
             </th>
 
-            <th scope="col" className="pr-10 text-w">
+            <th scope="col" className="pr-1 text-w">
               OWNER
             </th>
-            <th scope="col" className="pr-10">
+            <th scope="col" className="pr-1">
               TITLE
             </th>
-            <th scope="col" className="pr-2">
+            <th scope="col" className="pr-10">
               LIKES
             </th>
-            <th scope="col" className="pr-10">
+            <th scope="col" className="pr-1">
               PUBLISH DATE
             </th>
           </tr>
@@ -77,7 +75,10 @@ const AllPosts = ({ setId, data }) => {
 
               <td>{post.text}</td>
 
-              <td>{post.likes}</td>
+              <td className="flex items-center">
+                <img src={LikeIcon} alt="like" />
+                <p className="pl-1">{post.likes}</p>
+              </td>
               <td>{dayjs(post.publishDate).format("MMMM D, YYYY")}</td>
             </tr>
           ))}
