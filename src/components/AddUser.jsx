@@ -1,8 +1,11 @@
 import { Field, Form, Formik } from "formik";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addUserSchema } from "./definitions/yup/addUserSchema";
 import CustomFormInput from "./form/CustomFormInput";
-
+import { createUser } from "./user/userSlice";
 const AddUser = () => {
+  const dispatch = useDispatch();
   return (
     <section
       style={{
@@ -16,7 +19,18 @@ const AddUser = () => {
       <section className="shadow h-auto p-6">
         <p className="text-4xl font-bold">ADD USER</p>
         <p className="text-2xl font-bold pt-2.5 pb-5">1/2 Personal Details</p>
-        <Formik>
+        <Formik
+          validationSchema={addUserSchema}
+          initialValues={{
+            email: "",
+            firstName: "",
+            lastName: "",
+          }}
+          onSubmit={(values) => {
+            console.log(values);
+            dispatch(createUser(values));
+          }}
+        >
           {() => (
             <Form>
               <Field
@@ -55,6 +69,10 @@ const AddUser = () => {
                 name="dateOfBirth"
                 title="Date of Birth"
               />
+              <button type="submit" className="border p-2">
+                {" "}
+                submit{" "}
+              </button>
             </Form>
           )}
         </Formik>
