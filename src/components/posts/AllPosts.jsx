@@ -28,7 +28,7 @@ const AllPosts = ({ setId, data }) => {
   return (
     <section className="h-96 overflow-y-scroll">
       <table
-        className="text-left text-gray-500 text-xs  py-8 "
+        className="text-left text-gray-500 text-xs  py-8  "
         style={{ padding: "4rem", width: "100%" }}
       >
         <thead>
@@ -37,13 +37,13 @@ const AllPosts = ({ setId, data }) => {
               <input type="checkbox" className="ml-3 " />
             </th>
 
-            <th scope="col" className="pr-1 text-w">
+            <th scope="col" className="pr-10 md:pr-4 text-w">
               OWNER
             </th>
             <th scope="col" className="pr-1">
               TITLE
             </th>
-            <th scope="col" className="pr-10">
+            <th scope="col" className="pr-4 md:pr-10">
               LIKES
             </th>
             <th scope="col" className="pr-1">
