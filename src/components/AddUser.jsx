@@ -19,6 +19,11 @@ const AddUser = ({ closeModal }) => {
       <section className="shadow h-auto p-6">
         <p className="text-4xl font-bold">ADD USER</p>
         <p className="text-2xl font-bold pt-2.5 pb-5">1/2 Personal Details</p>
+        <p className="text-xs text-gray-500 mb-2">
+          {" "}
+          Note: only email, first name and last name are required to create a
+          user.
+        </p>
         <Formik
           validationSchema={addUserSchema}
           initialValues={{
