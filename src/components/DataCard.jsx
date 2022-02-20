@@ -19,7 +19,7 @@ const DataCard = ({ title, image, data }) => {
 
       <div className="flex flex-col justify-center pl-4">
         <p className="text-xs text-gray-500">{title}</p>
-        <p>67</p>
+        <p>{data}</p>
       </div>
     </div>
   );
