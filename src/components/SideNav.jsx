@@ -28,7 +28,7 @@ const SideNav = () => {
       {isModalOpen ? (
         <ClickAwayListener onClickAway={closeModal}>
           <div>
-            <AddUser />
+            <AddUser closeModal={closeModal} />
           </div>
         </ClickAwayListener>
       ) : null}
