@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import React, { useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
 import { useSelector } from "react-redux";
@@ -38,25 +39,24 @@ const AllPosts = ({ setId, data }) => {
               <input type="checkbox" className="ml-3 " />
             </th>
 
-            <th scope="col" className="pr-10 text-transparent">
-              ffb
+            <th scope="col" className="pr-10 text-w">
+              OWNER
             </th>
             <th scope="col" className="pr-10">
               TITLE
             </th>
-            <th scope="col" className="pr-10">
-              FIRST NAME
+            <th scope="col" className="pr-2">
+              LIKES
             </th>
             <th scope="col" className="pr-10">
-              LAST NAME
+              PUBLISH DATE
             </th>
-            <th scope="col">ID</th>
           </tr>
         </thead>
         <tbody className="bg-white mt-4 pl-8 w-full">
           {data.map((post) => (
             <tr
-              className=" shadow  px-4 w-full rounded cursor-pointer"
+              className=" shadow pb-4 px-4 w-full rounded cursor-pointer h-6"
               style={{ marginBottom: "40px" }}
               onClick={() => setId(post.id)}
             >
@@ -64,20 +64,21 @@ const AllPosts = ({ setId, data }) => {
                 {" "}
                 <input type="checkbox" className="ml-3" />
               </td>
-              <td className="my-8 py-2">
+              <td className="my-4 flex items-center">
                 <img
                   src={post.image}
                   alt=""
-                  className="-pl-2 rounded-full w-12 h-12"
+                  className="-pl-2 rounded-full w-8 h-8"
                 />
+                <p className="pl-1">
+                  {post?.owner?.firstName} {post?.owner?.lastName}
+                </p>
               </td>
-              <td>
-                {post?.owner?.firstName} {post?.owner?.lastName}
-              </td>
+
               <td>{post.text}</td>
 
               <td>{post.likes}</td>
-              <td>{post.publishDate}</td>
+              <td>{dayjs(post.publishDate).format("MMMM D, YYYY")}</td>
             </tr>
           ))}
         </tbody>
