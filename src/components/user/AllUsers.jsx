@@ -15,9 +15,6 @@ const AllUsers = ({ setId, data }) => {
   // const users = useSelector(selectUsers);
   const isLoading = useSelector(selectUsersLoading);
 
-  /*  useEffect(()=> {
-      setId(users.data[0].id)
-  }, []) */
   if (!data || isLoading === "pending")
     return (
       <div className="h-96 flex justify-center items-center">
@@ -36,7 +33,7 @@ const AllUsers = ({ setId, data }) => {
               <input type="checkbox" className="ml-3 " />
             </th>
 
-            <th scope="col" className="pr-10 text-white">
+            <th scope="col" className="pr-10 text-gra text-transparent">
               ffb
             </th>
             <th scope="col" className="pr-10">
