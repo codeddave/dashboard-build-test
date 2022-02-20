@@ -16,7 +16,9 @@ const PostDetailsCard = ({ post }) => {
           <p className="pt-2">{post.text} </p>
         </section>
       ) : (
-        <p className="text-center pt-20">Please Select a post from list </p>
+        <p className="text-center pt-20">
+          Please Select a post from list to view{" "}
+        </p>
       )}
     </section>
   );
