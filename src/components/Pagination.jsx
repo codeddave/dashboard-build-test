@@ -20,14 +20,13 @@ const Pagination = ({
         </button>
         <ul className="paginatin flex">
           {pageNumbers.map((number) => (
-            <div key={number} className=" border p px-4 mr-3 rounded shadow-sm">
-              <li className="cursor-pointer pl text-blue-400  ">
-                <span
-                  className="page-link"
-                  onClick={() => handlePageNumberCLick(number)}
-                >
-                  {number}
-                </span>
+            <div
+              onClick={() => handlePageNumberCLick(number)}
+              key={number}
+              className=" border p px-4 mr-3 rounded shadow cursor-pointer"
+            >
+              <li className=" pl text-blue-400  ">
+                <span className="page-link">{number}</span>
               </li>
             </div>
           ))}
