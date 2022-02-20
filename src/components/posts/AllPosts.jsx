@@ -38,7 +38,7 @@ const AllPosts = ({ setId, data }) => {
               <input type="checkbox" className="ml-3 " />
             </th>
 
-            <th scope="col" className="pr-10 text-white">
+            <th scope="col" className="pr-10 text-transparent">
               ffb
             </th>
             <th scope="col" className="pr-10">
@@ -53,10 +53,10 @@ const AllPosts = ({ setId, data }) => {
             <th scope="col">ID</th>
           </tr>
         </thead>
-        <tbody className="bg-white mt-4 pl-8 w-full " style={{}}>
+        <tbody className="bg-white mt-4 pl-8 w-full">
           {data.map((post) => (
             <tr
-              className=" shadow  px-4 w-full rounded"
+              className=" shadow  px-4 w-full rounded cursor-pointer"
               style={{ marginBottom: "40px" }}
               onClick={() => setId(post.id)}
             >

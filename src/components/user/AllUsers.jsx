@@ -52,7 +52,7 @@ const AllUsers = ({ setId, data }) => {
           {data.map((user) => (
             <tr
               key={user.id}
-              className=" shadow  px-4 w-full rounded"
+              className=" shadow  px-4 w-full rounded cursor-pointer"
               style={{ marginBottom: "40px" }}
               onClick={() => setId(user.id)}
             >
