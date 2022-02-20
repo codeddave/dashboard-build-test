@@ -5,7 +5,7 @@ const UserDetailsCard = ({ user }) => {
   console.log(user);
   return (
     <section className="border-2 rounded h-auto w-1/4 mr p-4 text-xs">
-      {user.picture ? (
+      {user?.picture ? (
         <div>
           <div className="grid grid-cols-2 gap-x-3">
             <img
@@ -101,7 +101,9 @@ const UserDetailsCard = ({ user }) => {
           </div>
         </div>
       ) : (
-        <p className="text-center pt-20">Please Select a User from list </p>
+        <p className="text-center pt-20">
+          Please Select a User from list to view{" "}
+        </p>
       )}
     </section>
   );
