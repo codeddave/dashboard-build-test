@@ -7,7 +7,7 @@ const MainContentWrapper = styled.section`
 `;
 const MainContent = () => {
   return (
-    <MainContentWrapper className="h-screen w-full">
+    <MainContentWrapper className="h-full w-full overflow-y-scroll md:overflow-y-hidden">
       <div className="py-6 mb-9 shadow">
         <h1 className="text-2xl text-black font-semibold pl-10">Dashboard</h1>
       </div>

@@ -4,7 +4,7 @@ import React from "react";
 const UserDetailsCard = ({ user }) => {
   console.log(user);
   return (
-    <section className="border-2 rounded h-auto w-1/4 mr p-4 text-xs">
+    <section className="border-2 rounded h-auto w-1/4 mr p-4 text-xs order-1 md:order-2">
       {user?.picture ? (
         <div>
           <div className="grid grid-cols-2 gap-x-3">

@@ -2,10 +2,8 @@ import React from "react";
 import LikeIcon from "../../assets/icons/red-like.svg";
 
 const PostDetailsCard = ({ post }) => {
-  console.log(post);
-  if (!post) return <p>hel</p>;
   return (
-    <section className="border-2 rounded h-auto w-1/4 mr p-4 text-xs">
+    <section className="border-2 rounded h-auto w-1/4 mr p-4 text-xs order-1 md:order-2">
       {post?.image ? (
         <section>
           <img

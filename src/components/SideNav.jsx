@@ -13,7 +13,7 @@ const SideNav = () => {
   };
 
   return (
-    <SideNavWrapper className="app-dark h-screen">
+    <SideNavWrapper className="app-dark h-full">
       <div
         className="flex justify-center flex-col items-center pt-8"
         onClick={() => setIsModalOpen(true)}

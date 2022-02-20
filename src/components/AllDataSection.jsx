@@ -74,8 +74,8 @@ const AllDataSection = () => {
   if (!usersLoadin === "resolved") return <p>loading</p>;
   return (
     <>
-      <div className="pt-16 pl- flex justify-around">
-        <section className="w-3/5">
+      <div className="pt-16 pl-6 md:pl-0 flex md:flex-row flex-col md:justify-around overflow-y-scroll">
+        <section className=" w-5/6 md:w-3/5 order-2 md:order-1">
           <div className="flex bord">
             <Tab onClick={handleUsersTabClick} current={tab === "users"}>
               All Users

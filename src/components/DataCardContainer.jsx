@@ -20,7 +20,7 @@ const DataCardContainer = () => {
   const posts = useSelector(selectPosts);
 
   return (
-    <div className="flex justify-between pl-12">
+    <div className="flex max-md flex-col md:flex-row justify-between pl-12">
       <DataCard title="USERS" image={UserIcon} data={users?.data?.length} />
       <DataCard title="POSTS" image={EnvIcon} data={posts?.data?.length} />
       <DataCard title="COMMENTS" image={CommentIcon} data="6459" />

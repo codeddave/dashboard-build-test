@@ -4,7 +4,7 @@ import SideNav from "../components/SideNav.jsx";
 
 const Home = () => {
   return (
-    <div className="flex w-full">
+    <div className="flex w-full h-screen overflow-y-scroll">
       <SideNav />
       <MainContent />
     </div>

@@ -5,7 +5,7 @@ const DataCard = ({ title, image, data }) => {
   return (
     <div
       className={classNames(
-        `shadow-lg flex w-1/3 mr-4 py-5 `,
+        `shadow-lg flex w-5/6 mt-2 md:mt-0 md:w-1/3 mr-4 py-5 `,
 
         {
           "pl-7": isPosts,
